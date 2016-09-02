@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>都道府県別車保有率</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+    <script src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load('visualization', '1', {
+            packages: ['geochart']
+        });
+        google.setOnLoadCallback(Chart01);
+        function Chart01() {
+            var data = google.visualization.arrayToDataTable([
+                ["都道府県", "車保有数(万台)"],
+                ["北海道", 169],
+                ["青森", 100],
+                ["岩手", 102],
+                ["宮城", 169],
+                ["秋田", 81],
+                ["山形", 93],
+                ["福島", 165],
+                ["茨城", 258],
+                ["栃木", 171],
+                ["群馬", 178],
+                ["埼玉", 406],
+                ["千葉", 359],
+                ["東京", 441],
+                ["神奈川", 399],
+                ["新潟", 184],
+                ["山梨", 75],
+                ["長野", 189],
+                ["静岡", 286],
+                ["富山", 89],
+                ["石川", 189],
+                ["福井", 66],
+                ["岐阜", 167],
+                ["愛知", 517],
+                ["三重", 150],
+                ["滋賀", 102],
+                ["京都", 133],
+                ["大阪", 373],
+                ["兵庫", 301],
+                ["奈良", 83],
+                ["和歌山", 75],
+                ["鳥取", 46],
+                ["島根", 55],
+                ["岡山", 152],
+                ["広島", 107],
+                ["山口", 107],
+                ["徳島", 62],
+                ["香川", 78],
+                ["愛媛", 101],
+                ["高知", 56],
+                ["福岡", 334],
+                ["佐賀", 67],
+                ["長崎", 94],
+                ["熊本", 136],
+                ["大分", 91],
+                ["宮崎", 94],
+                ["鹿児島", 95],
+                ["沖縄", 109],
+            ]);
+            var option = {
+                region: 'JP',
+                resolution: 'provinces',
+                width: 900,
+                height: 500,
+                legend: {
+                    position: 'none'
+                },
+            };
+            var chart = new google.visualization.GeoChart(document.getElementById('chart01'));
+            chart.draw(data, option);
+        };
+        google.load('visualization', '1', {
+            packages: ['geochart']
+        });
+        google.setOnLoadCallback(Chart02);
+        function Chart02() {
+            var data = google.visualization.arrayToDataTable([
+                ["都道府県", "1世帯当たりの保有数"],
+                ["北海道", 1.06],
+                ["青森", 1.225],
+                ["岩手", 1.403],
+                ["宮城", 1.308],
+                ["秋田", 1.387],
+                ["山形", 1.679],
+                ["福島", 1.564],
+                ["茨城", 1.605],
+                ["栃木", 1.623],
+                ["群馬", 1.648],
+                ["埼玉", 0.995],
+                ["千葉", 0.995],
+                ["東京", 0.450],
+                ["神奈川", 0.725],
+                ["新潟", 1.554],
+                ["山梨", 1.546],
+                ["長野", 1.584],
+                ["静岡", 1.414],
+                ["富山", 1.706],
+                ["石川", 1.489],
+                ["福井", 1.749],
+                ["岐阜", 1.596],
+                ["愛知", 1.288],
+                ["三重", 1.464],
+                ["滋賀", 1.403],
+                ["京都", 0.831],
+                ["大阪", 0.653],
+                ["兵庫", 0.918],
+                ["奈良", 1.110],
+                ["和歌山", 1.215],
+                ["鳥取", 1.451],
+                ["島根", 1.401],
+                ["岡山", 1.372],
+                ["広島", 1.111],
+                ["山口", 1.237],
+                ["徳島", 1.355],
+                ["香川", 1.337],
+                ["愛媛", 1.125],
+                ["高知", 1.108],
+                ["福岡", 1.081],
+                ["佐賀", 1.520],
+                ["長崎", 1.083],
+                ["熊本", 1.134],
+                ["大分", 1.285],
+                ["宮崎", 1.277],
+                ["鹿児島", 1.158],
+                ["沖縄", 1.292],
+            ]);
+            var option = {
+                region: 'JP',
+                resolution: 'provinces',
+                width: 900,
+                height: 500,
+                legend: {
+                    position: 'none'
+                },
+            };
+            var chart = new google.visualization.GeoChart(document.getElementById('chart02'));
+            chart.draw(data, option);
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 >都道府県別の車保有率について</h1>
+        <h3>平成28年度5月末現在、都道府県別車保有数</h3>
+        <div id="chart01" class="hidden-xs"></div>
+        <br>
+        <p>
+           都会方面に車が集中しているのはもちろんながら、<br>
+           一部都会とは離れた部分にも車の保有率の高い地域があります。<br>
+        </p>
+        <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>地域</th>
+                            <th>乗用車</th>
+                            <th>貨物車</th>
+                            <th>乗合車</th>
+                            <th>特種車</th>
+                            <th>二輪車</th>
+                            <th>合計</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>北海道</td>
+                            <td>2789128</td>
+                            <td>654061</td>
+                            <td>14052</td>
+                            <td>141429</td>
+                            <td>140754</td>
+                            <td>3739424</td>
+                        </tr>
+                        <tr>
+                            <td>東北</td>
+                            <td>5241077</td>
+                            <td>1470345</td>
+                            <td>23253</td>
+                            <td>173868</td>
+                            <td>232492</td>
+                            <td>7142035</td>
+                        </tr>
+                        <tr>
+                            <td>関東</td>
+                            <td>17299725</td>
+                            <td>3707378</td>
+                            <td>66725</td>
+                            <td>462329</td>
+                            <td>1365767</td>
+                            <td>22901924</td>
+                        </tr>
+                        <tr>
+                            <td>北陸信越</td>
+                            <td>4158650</td>
+                            <td>1076966</td>
+                            <td>16652</td>
+                            <td>119562</td>
+                            <td>169892</td>
+                            <td>541722</td>
+                        </tr>
+                        <tr>
+                            <td>中部</td>
+                            <td>9226046</td>
+                            <td>1971988</td>
+                            <td>26779</td>
+                            <td>210788</td>
+                            <td>453598</td>
+                            <td>11889199</td>
+                        </tr>
+                        <tr>
+                            <td>近畿</td>
+                            <td>8033128</td>
+                            <td>1863756</td>
+                            <td>29377</td>
+                            <td>216696</td>
+                            <td>560255</td>
+                            <td>10703212</td>
+                        </tr>
+                        <tr>
+                            <td>中国</td>
+                            <td>4152410</td>
+                            <td>1048907</td>
+                            <td>13874</td>
+                            <td>109486</td>
+                            <td>183939</td>
+                            <td>5508616</td>
+                        </tr>
+                        <tr>
+                            <td>四国</td>
+                            <td>2165402</td>
+                            <td>647623</td>
+                            <td>6940</td>
+                            <td>60441</td>
+                            <td>101775</td>
+                            <td>2982181</td>
+                        </tr>
+                        <tr>
+                            <td>九州</td>
+                            <td>7055254</td>
+                            <td>1909077</td>
+                            <td>29436</td>
+                            <td>187402</td>
+                            <td>364567</td>
+                            <td>9545736</td>
+                        </tr>
+                        <tr>
+                            <td>沖縄</td>
+                            <td>817163</td>
+                            <td>203166</td>
+                            <td>3559</td>
+                            <td>19187</td>
+                            <td>55990</td>
+                            <td>1099065</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+           では次に、1世帯あたりの自動車の普及台数について見たいと思います。          
+      
+        <h3>1世帯当たりの自動車保有数</h3>
+        <div id="chart02" class="hidden-xs"></div>
+        <br>
+        <p>
+            今回は逆に、先ほど保有数の高かった東京などの都会が1世帯当たりの保有数が少なくなっています。<br>
+            販売する車を考えるにあたって、この1世帯当たりの保有数をメインに考えてみる、というのもいいのかもしれません。
+        </p>
+        
+
+    <h2>出典</h2>
+    <ul>
+        <li>
+            <a href="https://www.airia.or.jp/publish/statistics/number.html" target="_blank">一般財団法人　自動車検査登録情報協会(自検協)</a>
+        </li>
+    </ul>
+</body>
+
+</html>
